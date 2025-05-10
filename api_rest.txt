@@ -1,0 +1,30 @@
+REST 
+Es una arquitectura de software para construit APIs
+    PRINCIPIO DE REST
+    - Escalabilidad
+    - Fiabilidad
+    - poratbilidad
+    - Facil de modificar
+    - Visibilidad
+    - Simplicidad
+
+Sustento de un REST
+
+En REST todo es considerado un recurso (resources) (Entidades concretas o una coleccion de esas entidades)
+Cada recurso se identifica con una url
+
+Verbos HTTP
+Para definir las operaciones que se pueden realizar con los recursos (CRUD)
+GET, POST, PUT, DELETE, ETC
+
+Representaciones
+JSON, HTML, XML, etc.
+El cliente deberia poder decidir la representacion del recurso
+
+Stateless
+El cliente debe enviar toda la informacion necesaria para procesar la request
+
+Interfaz uniforme
+
+Separacion de conceptos 
+Permite que cliente y servidor evolucionen de una manera separada
