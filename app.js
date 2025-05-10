@@ -1,6 +1,7 @@
 const express = require('express');
 const crypto = require('node:crypto');
 const cors = require('cors');
+const serverless = require('serverless-http');
 const movies = require('./movies.json');
 const { validateMovie, validatePartialMovie } = require('./schemas/movies');
 
@@ -135,4 +136,7 @@ const PORT = process.env.PORT ?? 1234;
 app.listen(PORT, () => {
     console.log(`server listening on port http://localhost:${PORT}`);
     
-})
+});
+
+module.exports = app;
+module.exports.handler = serverless(app);
