@@ -105,4 +105,11 @@ app.patch('/movies/:id', (req, res) => {
     return res.json(updateMovie);
 });
 
+const PORT = process.env.PORT ?? 1234;
+
+app.listen(PORT, () => {
+    console.log(`server listening on port http://localhost:${PORT}`);
+    
+});
+
 module.exports.handler = serverless(app);
