@@ -9,6 +9,12 @@ const app = express();
 app.disable('x-powered-by');
 
 app.use(express.json());
+
+app.use((err, req, res, next) => {
+    console.error('Server Error:', err);
+    res.status(500).json({ message: 'Internal Server Error', error: err.message });
+});
+
 app.use(cors({
     origin: (origin, callback) => {
         const ACCEPTED_ORIGINS = [
