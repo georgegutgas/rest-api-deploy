@@ -1,7 +1,6 @@
 const express = require('express');
 const crypto = require('node:crypto');
 const cors = require('cors');
-const serverless = require('serverless-http');
 const movies = require('./movies.json');
 const { validateMovie, validatePartialMovie } = require('./schemas/movies');
 
@@ -118,4 +117,4 @@ app.listen(PORT, () => {
     
 });
 
-module.exports.handler = serverless(app);
+module.exports = app;
