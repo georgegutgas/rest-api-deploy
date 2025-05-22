@@ -1,4 +1,4 @@
-const z = require('zod'); // Para validar los tipos de datos sin hacerlo manualmente
+import z from 'zod';    // Para validar los tipos de datos sin hacerlo manualmente
 
 const movieSchema = z.object({
     title: z.string({
@@ -21,15 +21,11 @@ const movieSchema = z.object({
     )
 });
 
-function validateMovie(object) {
+export function validateMovie(object) {
     return movieSchema.safeParse(object);
 }
 
-function validatePartialMovie(object) {
+export function validatePartialMovie(object) {
     return movieSchema.partial().safeParse(object);
 }
-
-module.exports = {
-    validateMovie,
-    validatePartialMovie
-}
+ 
